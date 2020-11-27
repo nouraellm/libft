@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
 	int sign;
 	int res;
 
 	res = 0;
 	sign = 1;
-	while (*str == ' ' || *str == '\f' || *str == '\r' || *str == '\t'
-			|| *str == '\v' || *str == '\n')
+	while (*str == ' ' ||
+				 *str == '\f' ||
+				 *str == '\r' ||
+				 *str == '\t' ||
+				 *str == '\v' ||
+				 *str == '\n' ||
+				 *str == '+')
 		str++;
-	if (*str == '-' || *str == '+')
+	if (*str == '-')
 	{
-		if (*str == '-')
-			sign = -sign;
+		sign = -sign;
 		str++;
 	}
 	while (*str != '\0' && (*str >= '0' && *str <= '9'))
